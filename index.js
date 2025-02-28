@@ -9,7 +9,7 @@ const path = require('path')
 
 const app = express()
 
-const PORT = 4007;
+const PORT = process.env.PORT || 4007;
 
 dotEnv.config();
 
@@ -28,6 +28,6 @@ app.listen(PORT, ()=>{
     
 })
 
-app.use('/home', (req,res)=>{
+app.use('/', (req,res)=>{
     res.send("<h1> Welcome to Swiggy")
 })
