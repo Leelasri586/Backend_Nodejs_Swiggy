@@ -17,7 +17,7 @@ const upload = multer({storage: storage})
   const addProduct = async(req, res)=>{
     try {
         const {productName, price, category, bestSeller, description,} = req.body
-        const image = res.file?req.file.filename:undefined;
+        const image = req.file?req.file.filename:undefined;
 
         const firmId = req.params.firmId
         const firm = await Firm.findById(firmId)
