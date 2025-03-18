@@ -1,26 +1,25 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose');
 
 const vendorSchema = new mongoose.Schema({
-    username:{
+    username: {
         type: String,
-        required:true
+        required: true
     },
-    email:{
+    email: {
         type: String,
-        required:true,
-        unique:true
+        required: true,
+        unique: true
     },
-    password:{
+    password: {
         type: String,
-        required:true,
+        required: true
     },
-    firm:[
-        {
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Firm'
-        }
-    ]
-})
+    firm: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Firm'
+    }]
+});
 
-const Vendor = mongoose.model('Vendor', vendorSchema)
+const Vendor = mongoose.model('Vendor', vendorSchema);
+
 module.exports = Vendor;
